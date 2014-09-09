@@ -34,5 +34,8 @@ var Music = sequelize.define('music',{
         type :  Sequelize.STRING,
         allowNull:false
     }
+},{
+    freezeTableName:true,
+    timestamps:false
 })
 module.exports = Music;

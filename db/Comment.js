@@ -30,5 +30,8 @@ var Comment = sequelize.define('comment',{
         type :  Sequelize.INTEGER,
         allowNull:false
     }
+},{
+    freezeTableName:true,
+    timestamps:false
 })
 module.exports = Comment;
