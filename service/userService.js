@@ -9,7 +9,8 @@ var User = require('../db/User');
 var log = require('log');
 var Constants = require('../util/contant');
 var constants = new Constants();
-
+var fs = require('fs');
+var formidable = require('formidable');
 /*
     插入新用户
  */
@@ -39,5 +40,17 @@ exports.saveUser = function(req,res,next){
 }
 
 /*
-
+上传文件
 */
+exports.uploadFile = function(req,res,next){
+
+    var form = new formidable.IncomingForm();
+    var dir = __dirname+'/../public/upload/';
+    form.uploadDir =dir ;
+    form.parse(req, function(err, fields, files) {
+        fs.renameSync(files.fileForm.path,dir+files.fileForm.name);
+    });
+    res.end();
+}
+
+
