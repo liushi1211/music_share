@@ -5,20 +5,43 @@
     <title>音乐台首页</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css">
     <script src="./public_js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
     <script src="./js/index.js"></script>
 </head>
 <body>
+       <div data-role="page" id="index" class="main">
+           <div data-role="header">
+               <h1>Music上传页</h1>
+           </div>
+           <div data-role="content">
+               <a href="#uploadMusic" data-rel="dialog" data-inline="true" data-role="button">上传Music</a>
+               <div id="show"></div>
+           </div>
+           <div data-role="footer">
+               <h3>页脚文本</h3>
+           </div>
+       </div>
 
-       <form id='uploadFrom' enctype="multipart/form-data" method="post">
-       <input type="file" multiple  name="fileToUpload" id="fileToUpload"  onchange="fileSelected()">
+       <div data-role="page" id="uploadMusic">
+           <div data-role="content">
+               <form id='uploadFrom' enctype="multipart/form-data" method="post">
+                   <input type="file" accept="video/Mp4" multiple  name="fileToUpload" id="fileToUpload"  onchange="fileSelected()">
 
-       <div id="fileName"></div>
-       <div id="fileSize"></div>
-       <div id="fileType"></div>
-        <input type="button" onclick="uploadFile()" value="Upload"/>
-        <div id="progressNumber"></div>
-        </form>
-        <div id="show"></div>
+                   <div id="fileName"></div>
+                   <div id="fileSize"></div>
+                   <div id="fileType"></div>
+                   <a href="#" data-role="button" data-inline="true"  onclick="uploadFile()">上传</a>
+                   <div id="progressNumber"></div>
+               </form>
+
+           </div>
+           <div data-role="footer">
+               <h3>页脚文本</h3>
+           </div>
+       </div>
+
+
 
 </body>
 </html>

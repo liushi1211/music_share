@@ -64,7 +64,6 @@ function uploadFile(){
         xhr.send(fd);
     }
 
-    console.log(xhr.responseText);
 
 }
 
@@ -81,6 +80,7 @@ function uploadProgress(evt) {
 function uploadComplete(evt) {
     /* This event is raised when the server send back a response */
     alert("上传成功！");
+    $("#uploadMusic").dialog('close') ;
     var show = document.getElementById('show');
     var ContentList = "<video id='my_video' loop='true' onclick='star()'>" +
         "<source src='../upload/"+name+"'>"

@@ -14,7 +14,7 @@ var logger = require('morgan');
 
 
 var app = express();
-var port = 8081;
+var port = 8080;
 app.use(favicon());
 app.use(logger('dev')); // logger模块
 app.use(bodyParser.json());
